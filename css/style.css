@@ -1,80 +1,121 @@
-/* Configurações Gerais */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Corpo */
 body {
-    background-color: #8B0000; /* Vermelho escuro de fundo */
-    color: #FFFFFF;           /* Texto branco para leitura clara */
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  background-color: #fff;
+  color: #333;
 }
 
-/* Cabeçalho e Títulos */
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-    color: #FFFFFF;
+/* Cabeçalho */
+header {
+  background-color: #c8102e;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
 }
 
-h2 {
-    font-size: 1.8rem;
-    margin-top: 30px;
-    color: #FFD700; /* Amarelo/Dourado para destacar os ícones e títulos */
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
-/* Subtítulo e Blog */
-p, .info {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 10px auto;
-    opacity: 0.9;
+header p {
+  font-size: 1.2em;
+  font-style: italic;
 }
 
-a {
-    color: #FFD700;
-    text-decoration: none;
-    font-weight: bold;
+/* Navegação */
+nav {
+  background-color: #900018;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
 }
 
-a:hover {
-    text-decoration: underline;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-/* Seção de Alunos (Onde o problema era maior) */
-.lista-alunos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Divide em 3 colunas iguais */
-    gap: 15px;
-    max-width: 800px;
-    margin: 20px auto;
-    text-align: left; /* Nomes alinhados à esquerda dentro da coluna */
-    list-style: none;
-    padding: 0;
+nav a:hover {
+  color: #ffcccc;
 }
 
-.lista-alunos li {
-    background: rgba(255, 255, 255, 0.1); /* Um fundo leve para cada nome */
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 1rem;
+/* Seções */
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+section h2 {
+  color: #c8102e;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+section p {
+  text-align: center;
+  max-width: 800px;
+  margin: auto 0 40px;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+/* Lista de alunos estilo Instagram */
+ul.alunos {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 0;
+}
+
+ul.alunos li {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 20px 10px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+ul.alunos li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+ul.alunos a {
+  text-decoration: none;
+  color: #c8102e;
+  font-weight: bold;
+  display: block;
 }
 
 /* Rodapé */
 footer {
-    margin-top: 50px;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 20px;
-    width: 100%;
-    opacity: 0.7;
+  background-color: #c8102e;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }
 
-/* Responsividade para Celular */
-@media (max-width: 600px) {
-    .lista-alunos {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
-    }
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media(max-width: 600px){
+  nav {
+    flex-direction: column;
+  }
 }
