@@ -22,13 +22,18 @@ header {
 .neon-title {
   font-size: 36px;
   color: #ff0033;
-  text-shadow: 0 0 5px #ff0033, 0 0 10px #ff0033, 0 0 20px #ff0033;
+  text-shadow: 
+    0 0 5px #ff0033,
+    0 0 10px #ff0033,
+    0 0 20px #ff3399,
+    0 0 40px #ff3399;
 }
 
 .neon-subtitle {
   font-size: 14px;
   color: #ff66a3;
   text-shadow: 0 0 4px #ff66a3, 0 0 8px #ff66a3;
+  margin-top: 8px;
 }
 
 /* CARD */
@@ -39,30 +44,31 @@ header {
   margin: 25px auto;
   padding: 25px 30px;
   border-radius: 12px;
-  box-shadow: 0 0 15px #ff0033;
   border: 1px solid #ff0033;
-  transition: 0.3s ease;
+  box-shadow: 0 0 15px #ff0033;
+  transition: all 0.3s ease;
 }
 
 .card.neon-card:hover {
-  box-shadow: 0 0 25px #ff3399;
+  box-shadow: 0 0 25px #ff3399, 0 0 50px #ff66ff;
 }
 
-/* TITULOS */
+/* TITULOS CARD */
 .card.neon-card h2 {
   font-size: 24px;
   color: #ff3399;
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: 0 0 5px #ff3399, 0 0 10px #ff3399;
+  text-shadow: 0 0 5px #ff3399, 0 0 10px #ff66ff;
 }
 
-/* LINKS E RESUMO */
+/* RESUMO E LINKS */
 .card.neon-card .resumo {
   font-size: 14px;
   color: #ff66a3;
   line-height: 1.5;
   text-align: center;
+  margin-bottom: 12px;
 }
 
 .card.neon-card a {
@@ -70,6 +76,7 @@ header {
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s ease;
+  text-shadow: 0 0 5px #ff0033;
 }
 
 .card.neon-card a:hover {
@@ -109,7 +116,7 @@ header {
 .alunos li a:hover {
   background: rgba(255,0,51,0.25);
   transform: translateY(-2px);
-  box-shadow: 0 0 15px #ff3399;
+  box-shadow: 0 0 15px #ff3399, 0 0 25px #ff66ff;
 }
 
 /* ANIMAÇÃO */
@@ -133,7 +140,7 @@ footer {
 
 /* RESPONSIVO */
 @media (max-width: 480px) {
-  header h1 { font-size: 26px; }
+  header h1 { font-size: 28px; }
   header p { font-size: 12px; }
   .card.neon-card h2 { font-size: 20px; }
   .alunos li a { font-size: 14px; padding: 6px 10px; }
