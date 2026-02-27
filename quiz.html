@@ -21,10 +21,12 @@
 </header>
 
 <main>
-  <!-- Quiz será inserido aqui via JS -->
+  <!-- O quiz será inserido aqui -->
 </main>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+
   const quiz = [
     {
       pergunta: "O que é logística?",
@@ -66,8 +68,12 @@
       button.textContent = alt;
       button.className = 'option';
       button.addEventListener('click', () => {
-        const feedback = section.querySelector('.feedback') || document.createElement('p');
-        feedback.className = 'feedback';
+        let feedback = section.querySelector('.feedback');
+        if(!feedback) {
+          feedback = document.createElement('p');
+          feedback.className = 'feedback';
+          section.appendChild(feedback);
+        }
         if(index === q.correta) {
           feedback.textContent = "✅ Correto!";
           feedback.style.color = "green";
@@ -75,13 +81,14 @@
           feedback.textContent = "❌ Errado! Tente novamente.";
           feedback.style.color = "red";
         }
-        if(!section.contains(feedback)) section.appendChild(feedback);
       });
       section.appendChild(button);
     });
 
     main.appendChild(section);
   });
+
+});
 </script>
 
 </body>
