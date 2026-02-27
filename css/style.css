@@ -6,7 +6,6 @@
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* BODY */
 body {
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
   color: #fff;
@@ -17,21 +16,19 @@ body {
 /* HEADER */
 header {
   text-align: center;
-  padding: 20px 15px;
-  background: rgba(179,0,0,0.85);
-  backdrop-filter: blur(6px);
-  border-bottom: 2px solid #ff4d4d;
+  padding: 30px 15px;
 }
 
 header h1 {
-  font-size: 28px;
+  font-size: 32px;
+  color: #ff4d4d;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 header p {
   font-size: 14px;
   opacity: 0.85;
-  margin-top: 5px;
 }
 
 /* CARD */
@@ -42,7 +39,7 @@ header p {
   margin: 25px auto;
   padding: 25px 30px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(255,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(255,0,0,0.5);
 }
 
 /* CARD RESUMO E INFO */
@@ -84,13 +81,16 @@ h2 {
 .alunos {
   list-style: none;
   padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .alunos li {
-  margin-bottom: 12px;
   opacity: 0;
-  transform: translateX(-30px);
-  animation: fadeSlide 0.5s forwards;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s forwards;
   animation-delay: calc(var(--i) * 0.1s);
 }
 
@@ -108,15 +108,15 @@ h2 {
 .alunos li a:hover {
   background: rgba(255, 77, 77, 0.25);
   color: #ff1a1a;
-  transform: translateX(5px);
+  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255,0,0,0.5);
 }
 
 /* ANIMAÇÃO */
-@keyframes fadeSlide {
+@keyframes fadeUp {
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
@@ -132,8 +132,9 @@ footer {
 }
 
 /* RESPONSIVO */
-@media (min-width: 768px) {
-  header h1 { font-size: 32px; }
-  h2 { font-size: 24px; }
-  .alunos li a { font-size: 16px; padding: 10px 14px; }
+@media (max-width: 480px) {
+  header h1 { font-size: 26px; }
+  header p { font-size: 12px; }
+  h2 { font-size: 20px; }
+  .alunos li a { font-size: 14px; padding: 6px 10px; }
 }
