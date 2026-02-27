@@ -3,11 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  background: #0a0a0a;
   color: #fff;
   min-height: 100vh;
   padding-bottom: 40px;
@@ -19,62 +19,62 @@ header {
   padding: 30px 15px;
 }
 
-header h1 {
-  font-size: 32px;
-  color: #ff4d4d;
-  font-weight: 700;
-  margin-bottom: 10px;
+.neon-title {
+  font-size: 36px;
+  color: #ff0033;
+  text-shadow: 0 0 5px #ff0033, 0 0 10px #ff0033, 0 0 20px #ff0033;
 }
 
-header p {
+.neon-subtitle {
   font-size: 14px;
-  opacity: 0.85;
+  color: #ff66a3;
+  text-shadow: 0 0 4px #ff66a3, 0 0 8px #ff66a3;
 }
 
 /* CARD */
-.card {
-  background: rgba(0,0,0,0.7);
+.card.neon-card {
+  background: rgba(10,0,0,0.6);
   backdrop-filter: blur(10px);
   max-width: 650px;
   margin: 25px auto;
   padding: 25px 30px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(255,0,0,0.5);
+  box-shadow: 0 0 15px #ff0033;
+  border: 1px solid #ff0033;
+  transition: 0.3s ease;
 }
 
-/* CARD RESUMO E INFO */
-.info-card .resumo {
-  font-size: 14px;
-  color: #ff9999;
+.card.neon-card:hover {
+  box-shadow: 0 0 25px #ff3399;
+}
+
+/* TITULOS */
+.card.neon-card h2 {
+  font-size: 24px;
+  color: #ff3399;
   text-align: center;
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-
-.info-card p, .info-card a {
-  font-size: 14px;
-  color: #ff9999;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.info-card a {
-  color: #ff4d4d;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.info-card a:hover {
-  text-decoration: underline;
-}
-
-/* TITULO */
-h2 {
-  color: #ff4d4d;
   margin-bottom: 20px;
+  text-shadow: 0 0 5px #ff3399, 0 0 10px #ff3399;
+}
+
+/* LINKS E RESUMO */
+.card.neon-card .resumo {
+  font-size: 14px;
+  color: #ff66a3;
+  line-height: 1.5;
   text-align: center;
-  font-weight: 600;
-  letter-spacing: 1px;
+}
+
+.card.neon-card a {
+  color: #ff0033;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.card.neon-card a:hover {
+  color: #ff66ff;
+  text-shadow: 0 0 10px #ff66ff, 0 0 20px #ff66ff;
 }
 
 /* LISTA DE ALUNOS */
@@ -95,21 +95,21 @@ h2 {
 }
 
 .alunos li a {
-  color: #ff4d4d;
-  font-weight: 600;
-  text-decoration: none;
   padding: 8px 12px;
-  display: inline-block;
   border-radius: 8px;
+  display: inline-block;
+  color: #ff0033;
+  background: rgba(255,0,51,0.1);
   transition: all 0.3s ease;
-  background: rgba(255, 0, 0, 0.1);
+  text-decoration: none;
+  font-weight: 600;
+  text-shadow: 0 0 5px #ff0033;
 }
 
 .alunos li a:hover {
-  background: rgba(255, 77, 77, 0.25);
-  color: #ff1a1a;
+  background: rgba(255,0,51,0.25);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255,0,0,0.5);
+  box-shadow: 0 0 15px #ff3399;
 }
 
 /* ANIMAÇÃO */
@@ -122,19 +122,19 @@ h2 {
 
 /* FOOTER */
 footer {
-  background: rgba(179,0,0,0.9);
-  backdrop-filter: blur(6px);
-  color: white;
+  background: #1a0000;
+  color: #ff0033;
   text-align: center;
   padding: 14px;
   margin-top: 30px;
   font-size: 14px;
+  text-shadow: 0 0 5px #ff0033;
 }
 
 /* RESPONSIVO */
 @media (max-width: 480px) {
   header h1 { font-size: 26px; }
   header p { font-size: 12px; }
-  h2 { font-size: 20px; }
+  .card.neon-card h2 { font-size: 20px; }
   .alunos li a { font-size: 14px; padding: 6px 10px; }
 }
