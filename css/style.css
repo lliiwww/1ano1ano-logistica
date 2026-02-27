@@ -3,30 +3,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* FUNDO DO SITE */
+/* FUNDO */
 body {
-  background-color: #8b0000; /* vermelho escuro */
-  color: white;
+  background: linear-gradient(180deg, #8b0000, #b30000);
+  color: #fff;
   min-height: 100vh;
 }
 
-/* CABEÇALHO */
+/* HEADER */
 header {
-  background-color: #b30000;
-  padding: 20px;
+  padding: 25px 15px;
   text-align: center;
 }
 
 header h1 {
-  font-size: 24px;
-  margin-bottom: 5px;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 header p {
   font-size: 14px;
+  opacity: 0.9;
 }
 
 /* CONTEÚDO */
@@ -37,17 +37,30 @@ main {
 /* CARDS */
 .card {
   background-color: #ffffff;
-  color: #000;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  color: #222;
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* TÍTULOS */
+.card h2 {
+  margin-bottom: 10px;
+  color: #b30000;
+}
+
+/* TEXTO */
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* LINKS */
 a {
-  color: #ffcccc;
+  color: #b30000;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 a:hover {
@@ -56,22 +69,36 @@ a:hover {
 
 /* BOTÕES */
 button {
-  background-color: #ff0000;
+  background: linear-gradient(135deg, #ff0000, #b30000);
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 15px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #cc0000;
+  opacity: 0.9;
 }
 
-/* RODAPÉ */
+/* INPUTS */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* FOOTER */
 footer {
-  background-color: #660000;
+  margin-top: 30px;
+  padding: 12px;
   text-align: center;
-  padding: 10px;
   font-size: 12px;
+  opacity: 0.8;
 }
