@@ -1,4 +1,4 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,17 +6,30 @@
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* FUNDO */
+/* ================= FUNDO ================= */
 body {
   background: linear-gradient(180deg, #8b0000, #b30000);
-  color: #fff;
+  color: #ffffff;
   min-height: 100vh;
 }
 
-/* HEADER */
+/* ================= ANIMAÇÕES ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= HEADER ================= */
 header {
-  padding: 25px 15px;
+  padding: 30px 15px;
   text-align: center;
+  animation: fadeUp 0.8s ease-out;
 }
 
 header h1 {
@@ -27,78 +40,148 @@ header h1 {
 header p {
   font-size: 14px;
   opacity: 0.9;
+  margin-top: 5px;
 }
 
-/* CONTEÚDO */
+/* ================= CONTEÚDO ================= */
 main {
-  padding: 15px;
+  padding: 16px;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* CARDS */
+/* ================= CARDS ================= */
 .card {
   background-color: #ffffff;
   color: #222;
   padding: 18px;
-  border-radius: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeUp 0.9s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* TÍTULOS */
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= TÍTULOS ================= */
 .card h2 {
-  margin-bottom: 10px;
   color: #b30000;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
-/* TEXTO */
+/* ================= TEXTO ================= */
 .card p {
   font-size: 14px;
   line-height: 1.6;
 }
 
-/* LINKS */
+/* ================= LINKS ================= */
 a {
   color: #b30000;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #ff0000;
 }
 
-/* BOTÕES */
+/* ================= BOTÕES ================= */
 button {
   background: linear-gradient(135deg, #ff0000, #b30000);
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 12px;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 15px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s;
 }
 
 button:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  opacity: 0.95;
 }
 
-/* INPUTS */
-input, textarea {
+/* ================= INPUTS ================= */
+input,
+textarea {
   width: 100%;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #ccc;
   margin-top: 8px;
   font-size: 14px;
 }
 
-/* FOOTER */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #b30000;
+  box-shadow: 0 0 0 2px rgba(179, 0, 0, 0.25);
+}
+
+/* ================= LISTA DE ALUNOS ================= */
+.alunos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.aluno {
+  background-color: #f8f8f8;
+  border-radius: 14px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.aluno:hover {
+  transform: scale(1.05);
+}
+
+.aluno img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+.aluno span {
+  display: block;
+  font-size: 13px;
+  color: #b30000;
+  font-weight: 600;
+}
+
+/* ================= FOOTER ================= */
 footer {
-  margin-top: 30px;
-  padding: 12px;
+  margin-top: 35px;
+  padding: 14px;
   text-align: center;
   font-size: 12px;
-  opacity: 0.8;
+  opacity: 0.85;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  .card h2 {
+    font-size: 22px;
+  }
 }
