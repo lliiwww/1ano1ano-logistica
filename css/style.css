@@ -1,101 +1,64 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
+  font-family: Arial, sans-serif;
+  padding: 15px;
+  background: #f4f4f4;
+  max-width: 600px;
+  margin: auto;
 }
 
-/* HEADER */
-header {
-  background-color: #1e3799;
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button {
+  background: #2c2c2c;
   color: white;
-  text-align: center;
-  padding: 30px 15px;
-}
-
-header a {
-  color: #ffffff;
-  text-decoration: none;
   font-weight: bold;
+  border: none;
 }
 
-/* BOTÃO */
-.botao {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 18px;
-  background-color: #4a69bd;
-  border-radius: 8px;
+button:active {
+  transform: scale(0.98);
 }
 
-/* SEÇÕES */
-section {
-  background-color: white;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 25px;
+#auth, #areaPost, #posts {
+  background: white;
+  padding: 15px;
   border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
 }
 
-/* LISTA DE ALUNOS */
-.alunos {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
-}
-
-.alunos li a {
-  display: block;
-  padding: 10px;
-  background-color: #ecf0f1;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  color: #1e3799;
-}
-
-/* BLOG */
 .post {
-  background-color: white;
-}
-
-.post h2 {
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 10px;
   margin-bottom: 10px;
-}
-
-.meta {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 15px;
-}
-
-/* FOOTER */
-footer {
-  background-color: #1e3799;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-}
-
-/* 📱 RESPONSIVO */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 22px;
-  }
-
-  section {
-    margin: 15px;
-    padding: 18px;
-  }
-
-  .alunos {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
 }
