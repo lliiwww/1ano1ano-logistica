@@ -1,128 +1,68 @@
 /* =========================
-   VARIÁVEIS DE CORES
-========================= */
-
-/* MODO CLARO (BRANCO + VERMELHO) */
-:root {
-  --bg: #ffffff;
-  --bg-texture: none;
-  --card-bg: rgba(245, 245, 245, 0.95);
-  --text: #111111;
-  --red: #c00000;
-  --border: rgba(192, 0, 0, 0.6);
-  --glow: rgba(192, 0, 0, 0.35);
-}
-
-/* MODO ESCURO (PRETO + VERMELHO — TEMA DA IMAGEM) */
-body.dark {
-  --bg: #0b0b0b;
-  --bg-texture: radial-gradient(circle at top, #1a1a1a 0%, #000 60%);
-  --card-bg: rgba(15, 15, 15, 0.92);
-  --text: #f1f1f1;
-  --red: #ff2b2b;
-  --border: rgba(255, 43, 43, 0.7);
-  --glow: rgba(255, 43, 43, 0.6);
-}
-
-/* =========================
    BASE
 ========================= */
-
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--bg-texture), var(--bg);
-  color: var(--text);
-  transition: background 0.4s, color 0.4s;
+  background: #0b0b0b; /* fundo preto fixo */
+  color: #f1f1f1;      /* texto claro */
+  transition: background 0.3s, color 0.3s;
 }
 
 /* =========================
    HEADER / BANNER
 ========================= */
-
-header {
-  text-align: center;
-  padding: 20px 12px 30px;
-}
-
-.banner {
-  max-width: 1100px;
-  margin: 0 auto 18px;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 2px solid var(--border);
-  box-shadow: 0 0 25px var(--glow);
-}
-
 .banner img {
   width: 100%;
-  height: auto;
-  display: block;
+  max-height: 260px;
+  object-fit: cover;
+  border: 2px solid #ff2b2b;
+  box-shadow: 0 0 25px rgba(255, 43, 43, 0.6);
+  border-radius: 16px;
 }
 
-header h1 {
-  margin: 12px 0 6px;
-  font-size: 2rem;
-  font-weight: 800;
+.titulo {
+  text-align: center;
+  padding: 15px;
 }
 
-header p {
-  margin: 0;
-  opacity: 0.85;
+.titulo h1 {
+  color: #ff2b2b;
+  text-shadow: 0 0 10px rgba(255, 43, 43, 0.6);
 }
 
 /* =========================
-   CONTEÚDO
+   MAIN / CARDS
 ========================= */
-
 main {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px 12px 40px;
+  padding: 15px;
 }
-
-/* =========================
-   CARDS (IGUAL À IMAGEM)
-========================= */
 
 .card {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(0, 0, 0, 0.25)
-  ),
-  var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 22px 20px;
-  margin-bottom: 26px;
-  box-shadow:
-    0 0 20px var(--glow),
-    inset 0 0 15px rgba(255, 255, 255, 0.04);
+  background: rgba(15, 15, 15, 0.95);
+  border: 2px solid #ff2b2b;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255, 43, 43, 0.35);
 }
 
 .card h2 {
+  color: #ff2b2b;
   text-align: center;
-  margin-top: 0;
-  color: var(--red);
-  font-size: 1.5rem;
-  text-shadow: 0 0 10px var(--glow);
-}
-
-.card p {
-  line-height: 1.6;
+  text-shadow: 0 0 8px rgba(255, 43, 43, 0.6);
 }
 
 /* =========================
    LINKS
 ========================= */
-
 a {
-  color: var(--red);
+  color: #ff2b2b;
   text-decoration: none;
   font-weight: 600;
 }
@@ -132,81 +72,50 @@ a:hover {
 }
 
 /* =========================
-   LISTA DE ALUNOS
+   ALUNOS
 ========================= */
-
 .alunos {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  list-style: none;
+  margin-top: 10px;
 }
 
 .alunos li {
-  position: relative;
-  padding-left: 16px;
-}
-
-.alunos li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--red);
-  text-shadow: 0 0 8px var(--glow);
+  background: #ff2b2b;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  border-radius: 8px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
 /* =========================
    FOOTER
 ========================= */
-
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 15px;
+  font-size: 14px;
   opacity: 0.8;
-  font-size: 0.9rem;
 }
 
 /* =========================
-   BOTÃO TEMA (SE JÁ EXISTIR)
+   RESPONSIVO CELULAR
 ========================= */
-
-#btnTema {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 8px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 0 10px var(--glow);
-}
-
-#btnTema:hover {
-  background: var(--red);
-  color: #fff;
-}
-
-/* =========================
-   RESPONSIVO (CELULAR)
-========================= */
-
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.6rem;
-  }
-
   .card {
-    padding: 18px 16px;
-  }
-
-  .alunos {
-    grid-template-columns: repeat(2, 1fr);
+    padding: 16px;
   }
 }
 
 @media (max-width: 480px) {
   .alunos {
     grid-template-columns: 1fr;
+  }
+
+  .titulo h1 {
+    font-size: 1.6rem;
   }
 }
