@@ -1,20 +1,22 @@
 * {
-  box-sizing: border-box;
-}
-
-body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f2f2f2;
-  color: #111;
-  transition: background 0.3s, color 0.3s;
 }
 
-header {
+/* 🔴 MODO CLARO (BRANCO + VERMELHO) */
+body {
+  background: #f4f4f4;
+  color: #111;
+  transition: 0.3s;
+}
+
+header,
+footer {
   background: #c62828;
   color: white;
   text-align: center;
-  padding-bottom: 20px;
 }
 
 .topo {
@@ -28,7 +30,7 @@ header {
   background: transparent;
   border: 2px solid white;
   color: white;
-  padding: 8px 14px;
+  padding: 6px 14px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
@@ -36,7 +38,7 @@ header {
 
 .banner img {
   width: 100%;
-  max-height: 250px;
+  max-height: 220px;
   object-fit: cover;
 }
 
@@ -49,40 +51,24 @@ main {
 .card {
   background: white;
   padding: 20px;
-  margin-bottom: 20px;
   border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 6px solid #c62828;
 }
 
 .card h2 {
   color: #c62828;
 }
 
-.alunos {
-  list-style: none;
-  padding: 0;
-  columns: 2;
-}
-
-.alunos li {
-  margin-bottom: 8px;
-}
-
-.alunos a {
+a {
   color: #c62828;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
 }
 
-footer {
-  background: #c62828;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-
-/* 🌙 MODO ESCURO */
+/* ⚫🔴 MODO ESCURO (PRETO + VERMELHO) */
 body.dark {
-  background: #0f0f0f;
+  background: #0b0b0b;
   color: #eee;
 }
 
@@ -92,20 +78,14 @@ body.dark footer {
 }
 
 body.dark .card {
-  background: #1b1b1b;
+  background: #151515;
+  border-left: 6px solid #ff2e2e;
+}
+
+body.dark h2 {
+  color: #ff2e2e;
 }
 
 body.dark a {
-  color: #ff5252;
-}
-
-@media (max-width: 600px) {
-  .alunos {
-    columns: 1;
-  }
-
-  .topo {
-    flex-direction: column;
-    gap: 10px;
-  }
+  color: #ff4d4d;
 }
