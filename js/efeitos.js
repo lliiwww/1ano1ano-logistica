@@ -15,18 +15,6 @@ setInterval(() => {
   glowOn = !glowOn;
 }, 1000);
 
-// Scroll reveal cards
-const cards = document.querySelectorAll('.card');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.2 });
-
-cards.forEach(card => observer.observe(card));
-
 // =========================
 // PARTICULAS NEON DE FUNDO
 // =========================
