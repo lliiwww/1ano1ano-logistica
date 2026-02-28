@@ -1,206 +1,212 @@
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* =========================
+   VARIÁVEIS DE CORES
+========================= */
 
-/* ===== VARIÁVEIS ===== */
+/* MODO CLARO (BRANCO + VERMELHO) */
 :root {
-  --vermelho: #ff2e2e;
-  --vermelho-claro: #ffd6d6;
-  --preto: #000;
-  --branco: #fff;
-  --cinza: #f2f2f2;
+  --bg: #ffffff;
+  --bg-texture: none;
+  --card-bg: rgba(245, 245, 245, 0.95);
+  --text: #111111;
+  --red: #c00000;
+  --border: rgba(192, 0, 0, 0.6);
+  --glow: rgba(192, 0, 0, 0.35);
 }
 
-/* ===== BODY (MODO CLARO) ===== */
+/* MODO ESCURO (PRETO + VERMELHO — TEMA DA IMAGEM) */
+body.dark {
+  --bg: #0b0b0b;
+  --bg-texture: radial-gradient(circle at top, #1a1a1a 0%, #000 60%);
+  --card-bg: rgba(15, 15, 15, 0.92);
+  --text: #f1f1f1;
+  --red: #ff2b2b;
+  --border: rgba(255, 43, 43, 0.7);
+  --glow: rgba(255, 43, 43, 0.6);
+}
+
+/* =========================
+   BASE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: radial-gradient(circle at top, #ffffff, #f2f2f2);
-  color: #222;
-  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg-texture), var(--bg);
+  color: var(--text);
   transition: background 0.4s, color 0.4s;
 }
 
-/* ===== BODY (MODO ESCURO) ===== */
-body.dark {
-  background: radial-gradient(circle at top, #1a0000, #000);
-  color: #eee;
-}
+/* =========================
+   HEADER / BANNER
+========================= */
 
-/* ===== HEADER ===== */
 header {
   text-align: center;
-  padding-bottom: 25px;
-  border-bottom: 2px solid var(--vermelho);
+  padding: 20px 12px 30px;
 }
 
-/* ===== BANNER ===== */
+.banner {
+  max-width: 1100px;
+  margin: 0 auto 18px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  box-shadow: 0 0 25px var(--glow);
+}
+
 .banner img {
   width: 100%;
-  max-height: 260px;
-  object-fit: cover;
-  border-bottom: 3px solid var(--vermelho);
+  height: auto;
+  display: block;
 }
 
-/* ===== TÍTULOS ===== */
 header h1 {
-  margin-top: 18px;
-  font-size: 30px;
-}
-
-body.dark header h1 {
-  text-shadow: 0 0 12px rgba(255, 46, 46, 0.7);
+  margin: 12px 0 6px;
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 header p {
-  margin-top: 6px;
-  font-size: 15px;
+  margin: 0;
   opacity: 0.85;
 }
 
-/* ===== MAIN ===== */
+/* =========================
+   CONTEÚDO
+========================= */
+
 main {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  padding: 30px 20px;
+  padding: 20px 12px 40px;
 }
 
-/* ===== CARDS ===== */
+/* =========================
+   CARDS (IGUAL À IMAGEM)
+========================= */
+
 .card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid var(--vermelho);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(0, 0, 0, 0.25)
+  ),
+  var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 22px;
-  margin-bottom: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: background 0.4s, box-shadow 0.4s;
-}
-
-body.dark .card {
-  background: rgba(20, 0, 0, 0.65);
+  padding: 22px 20px;
+  margin-bottom: 26px;
   box-shadow:
-    0 0 18px rgba(255, 46, 46, 0.35),
-    inset 0 0 20px rgba(0, 0, 0, 0.6);
+    0 0 20px var(--glow),
+    inset 0 0 15px rgba(255, 255, 255, 0.04);
 }
 
-/* ===== TÍTULO DO CARD ===== */
 .card h2 {
   text-align: center;
-  color: var(--vermelho);
-  margin-bottom: 15px;
-  font-size: 22px;
+  margin-top: 0;
+  color: var(--red);
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px var(--glow);
 }
 
-body.dark .card h2 {
-  text-shadow: 0 0 10px rgba(255, 46, 46, 0.6);
-}
-
-/* ===== TEXTO ===== */
 .card p {
   line-height: 1.6;
-  text-align: center;
 }
 
-/* ===== LINKS ===== */
+/* =========================
+   LINKS
+========================= */
+
 a {
-  color: var(--vermelho);
-  font-weight: bold;
+  color: var(--red);
   text-decoration: none;
+  font-weight: 600;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* ===== LISTA DE ALUNOS ===== */
+/* =========================
+   LISTA DE ALUNOS
+========================= */
+
 .alunos {
   list-style: none;
-  columns: 3;
-  margin-top: 10px;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 20px;
 }
 
 .alunos li {
-  margin-bottom: 10px;
-  text-align: center;
+  position: relative;
+  padding-left: 16px;
 }
 
-.alunos li a {
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: var(--vermelho-claro);
-  transition: transform 0.2s, background 0.3s;
+.alunos li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  text-shadow: 0 0 8px var(--glow);
 }
 
-.alunos li a:hover {
-  transform: translateY(-2px);
-}
+/* =========================
+   FOOTER
+========================= */
 
-body.dark .alunos li a {
-  background: rgba(255, 46, 46, 0.15);
-  color: #ff4d4d;
-  text-shadow: 0 0 6px rgba(255, 0, 0, 0.5);
-}
-
-/* ===== BOTÃO ===== */
-button {
-  background: var(--vermelho);
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 20px;
-  font-size: 14px;
-  border-top: 2px solid var(--vermelho);
-  margin-top: 40px;
+  opacity: 0.8;
+  font-size: 0.9rem;
 }
 
-/* ===== 📱 RESPONSIVO ===== */
+/* =========================
+   BOTÃO TEMA (SE JÁ EXISTIR)
+========================= */
+
+#btnTema {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--glow);
+}
+
+#btnTema:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+/* =========================
+   RESPONSIVO (CELULAR)
+========================= */
+
 @media (max-width: 768px) {
-
   header h1 {
-    font-size: 22px;
-  }
-
-  header p {
-    font-size: 14px;
-    padding: 0 10px;
-  }
-
-  .banner img {
-    max-height: 160px;
-  }
-
-  main {
-    padding: 15px;
+    font-size: 1.6rem;
   }
 
   .card {
-    padding: 16px;
-  }
-
-  .card h2 {
-    font-size: 18px;
+    padding: 18px 16px;
   }
 
   .alunos {
-    columns: 1;
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .alunos li a {
-    width: 100%;
+@media (max-width: 480px) {
+  .alunos {
+    grid-template-columns: 1fr;
   }
 }
