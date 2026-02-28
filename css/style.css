@@ -71,14 +71,9 @@ body {
   padding: 22px 20px;
   margin-bottom: 26px;
   box-shadow: 0 0 15px rgba(255, 43, 43, 0.3);
-  transition: box-shadow 0.5s, transform 0.5s, opacity 0.5s;
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
+  transition: box-shadow 0.5s, transform 0.5s;
+  opacity: 1; /* mostra direto */
+  transform: translateY(0); /* sem scroll reveal */
 }
 
 .card h2 {
