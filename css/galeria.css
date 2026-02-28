@@ -1,130 +1,85 @@
-/* ===== Reset básico ===== */
+/* =========================
+   BASE
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-  background-color: #fff;
-  color: #222;
-  line-height: 1.6;
+  background: #0b0b0b;
+  color: #f1f1f1;
+  overflow-x: hidden;
+  position: relative;
 }
 
-a {
-  color: #ff0000;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ===== Banner ===== */
+/* =========================
+   BANNER
+========================= */
 .banner img {
   width: 100%;
-  height: auto;
   display: block;
+  border-radius: 16px;
+  border: 2px solid #ff2b2b;
+  box-shadow: 0 0 25px rgba(255, 43, 43, 0.4);
+  transition: box-shadow 0.5s, transform 0.3s;
 }
 
-/* ===== Título ===== */
-.titulo {
-  text-align: center;
-  padding: 15px 10px;
+.banner img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 35px rgba(255, 43, 43, 0.8);
 }
 
+/* =========================
+   TÍTULO
+========================= */
 .titulo h1 {
+  color: #ff2b2b;
   font-size: 2rem;
-  margin-bottom: 5px;
-  color: #ff0000;
+  text-align: center;
+  text-shadow: 0 0 12px rgba(255, 43, 43, 0.7);
+  transition: text-shadow 0.5s;
+  margin-top: 16px;
 }
 
 .titulo p {
+  color: #f1f1f1;
+  opacity: 0.8;
+  text-align: center;
   font-size: 1rem;
-  color: #555;
+  margin-bottom: 24px;
 }
 
-/* ===== Menu centralizado ===== */
+/* =========================
+   LINKS / MENU
+========================= */
 nav {
-  text-align: center;        /* centraliza os links */
-  margin: 20px 0;            /* espaço acima e abaixo */
-  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 nav a {
-  margin: 0 15px;
-  font-weight: bold;
-  color: #ff0000;
-  transition: color 0.3s;
+  color: #ff2b2b;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 12px;
+  transition: color 0.2s, text-shadow 0.2s;
 }
 
 nav a:hover {
-  color: #990000;
+  color: #fff;
+  text-shadow: 0 0 8px #ff2b2b, 0 0 12px #ff2b2b;
 }
 
-/* ===== Cards da galeria ===== */
-.card {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ===== Grid de fotos da galeria ===== */
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.galeria-grid img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ff0000;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.galeria-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ff0000;
-}
-
-/* ===== Footer ===== */
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-  color: #555;
-  font-size: 0.9rem;
-}
-
-/* ===== Responsividade ===== */
-@media (max-width: 768px) {
-  .titulo h1 {
-    font-size: 1.6rem;
-  }
-
-  .card {
-    margin: 15px;
-    padding: 15px;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 10px 10px;
-  }
-
-  .galeria-grid {
-    gap: 10px;
-  }
+  padding: 20px;
+  font-size: 14px;
+  color: #f1f1f1;
+  opacity: 0.8;
 }
