@@ -5,12 +5,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-  background: #0b0b0b; /* fundo preto fixo */
-  color: #f1f1f1;      /* texto claro */
+  background: #0b0b0b;
+  color: #f1f1f1;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* =========================
+   PARTICULAS DE FUNDO
+========================= */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 /* =========================
@@ -22,7 +36,12 @@ body {
   border-radius: 16px;
   border: 2px solid #ff2b2b;
   box-shadow: 0 0 25px rgba(255, 43, 43, 0.4);
-  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, transform 0.3s;
+}
+
+.banner img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 35px rgba(255, 43, 43, 0.8);
 }
 
 .titulo h1 {
@@ -31,6 +50,7 @@ body {
   text-align: center;
   text-shadow: 0 0 12px rgba(255, 43, 43, 0.7);
   transition: text-shadow 0.5s;
+  margin-top: 16px;
 }
 
 .titulo p {
@@ -38,24 +58,27 @@ body {
   opacity: 0.8;
   text-align: center;
   font-size: 1rem;
+  margin-bottom: 24px;
 }
 
 /* =========================
    CARDS
 ========================= */
 .card {
-  background: rgba(20, 20, 20, 0.9);
+  background: rgba(20, 20, 20, 0.95);
   border: 1px solid #ff2b2b;
   border-radius: 16px;
   padding: 22px 20px;
   margin-bottom: 26px;
   box-shadow: 0 0 15px rgba(255, 43, 43, 0.3);
-  transition: box-shadow 0.5s, transform 0.3s;
+  transition: box-shadow 0.5s, transform 0.5s, opacity 0.5s;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(255, 43, 43, 0.7), inset 0 0 12px rgba(255,255,255,0.05);
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card h2 {
@@ -103,8 +126,8 @@ a:hover {
 }
 
 .alunos li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(255, 43, 43, 0.8), 0 0 8px rgba(255, 43, 43, 0.5) inset;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 43, 43, 0.9), 0 0 12px rgba(255, 43, 43, 0.5) inset;
 }
 
 /* =========================
