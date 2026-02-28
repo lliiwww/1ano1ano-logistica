@@ -1,226 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>1º Ano Logística</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Turma 1º Ano de Logística</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-  --vermelho: #b30000;
-  --fundo: #f5f5f5;
-  --card: #ffffff;
-  --texto: #111;
-}
-
-body.dark {
-  --fundo: #0e0e0e;
-  --card: #151515;
-  --texto: #f2f2f2;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--fundo);
-  color: var(--texto);
-  transition: 0.3s;
-}
-
-header {
-  background: var(--vermelho);
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.banner img {
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 15px;
-}
-
-.card {
-  background: var(--card);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-h2 {
-  color: var(--vermelho);
-}
-
-a {
-  color: var(--vermelho);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-#buscar {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-}
-
-.alunos {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.alunos li {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-}
-
-#nenhum {
-  display: none;
-  color: #888;
-  margin-top: 10px;
-}
-
-.botao-tema {
-  background: white;
-  color: var(--vermelho);
-  border: none;
-  padding: 8px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #111;
-  color: white;
-  margin-top: 30px;
-}
-
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 22px;
-  }
-}
-</style>
+  <!-- CSS do site (já existente) -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
 <header>
-  <div class="banner">
-    <img src="https://cdn.discordapp.com/attachments/1414755382961770498/1476810336014307328/IMG-20260227-WA0017.jpg">
-  </div>
-
   <h1>Turma 1º Ano de Logística</h1>
   <p>Etec João Elias Margutti • Santa Cruz das Palmeiras</p>
-
-  <button class="botao-tema" onclick="trocarTema()">🌗 Mudar tema</button>
 </header>
 
 <main>
+  <section class="card">
+    <h2>Alunos</h2>
 
-<section class="card">
-<h2>O que é Logística?</h2>
-<p>
-Planejar, organizar e controlar produtos e informações para que cheguem
-<strong>no lugar certo, na hora certa e da forma certa</strong>.
-</p>
-</section>
-
-<section class="card">
-<h2>Informações</h2>
-<p><strong>Instagram da Etec:</strong>
-<a href="https://www.instagram.com/etecjoaoeliasmargutti" target="_blank">
-@etecjoaoeliasmargutti
-</a></p>
-
-<p><strong>Instagram da Sala:</strong>
-<a href="https://www.instagram.com/1_teclogistica" target="_blank">
-@1_teclogistica
-</a></p>
-</section>
-
-<section class="card">
-<h2>Alunos</h2>
-
-<input id="buscar" placeholder="Buscar aluno..." onkeyup="buscarAluno()">
-
-<ul class="alunos" id="lista">
-<li><a href="https://www.instagram.com/amanda_.vz" target="_blank">Amanda</a></li>
-<li><a href="https://www.instagram.com/almeida_anna_1409" target="_blank">Anna</a></li>
-<li><a href="https://www.instagram.com/anty.scp" target="_blank">Anthony</a></li>
-<li><a href="https://www.instagram.com/e.oliveirascp" target="_blank">Elias</a></li>
-<li><a href="https://www.instagram.com/gabytheodoro__" target="_blank">Gaby</a></li>
-<li><a href="https://www.instagram.com/i4go_hen.rique" target="_blank">Iago Henrique</a></li>
-<li><a href="https://www.instagram.com/_miguel._.vetare_" target="_blank">Miguel</a></li>
-<li><a href="https://www.instagram.com/lqqcas" target="_blank">Lucas</a></li>
-<li><a href="https://www.instagram.com/leh_.23" target="_blank">Alessandra</a></li>
-<li><a href="https://www.instagram.com/ka_k4ir0n" target="_blank">Kairon</a></li>
-</ul>
-
-<p id="nenhum">❌ Nenhum aluno encontrado</p>
-</section>
-
+    <!-- LISTA (ORDENADA AUTOMATICAMENTE PELO JS) -->
+    <ul class="alunos" id="lista-alunos">
+      <li><a href="https://www.instagram.com/amanda_.vz" target="_blank">Amanda</a></li>
+      <li><a href="https://www.instagram.com/almeida_anna_1409" target="_blank">Anna</a></li>
+      <li><a href="https://www.instagram.com/anty.scp" target="_blank">Anthony</a></li>
+      <li><a href="https://www.instagram.com/leh_.23" target="_blank">Alessandra</a></li>
+      <li><a href="https://www.instagram.com/e.oliveirascp" target="_blank">Elias</a></li>
+      <li><a href="https://www.instagram.com/gabytheodoro__" target="_blank">Gaby</a></li>
+      <li><a href="https://www.instagram.com/hagata.oliveira0" target="_blank">Hagata</a></li>
+      <li><a href="https://www.instagram.com/i4go_hen.rique" target="_blank">Iago Henrique</a></li>
+      <li><a href="https://www.instagram.com/_inaciozwl" target="_blank">Inácio</a></li>
+      <li><a href="https://www.instagram.com/jhow.alvezx" target="_blank">Jonathan</a></li>
+      <li><a href="https://www.instagram.com/larry_.czs" target="_blank">Lara Beatriz</a></li>
+      <li><a href="https://www.instagram.com/lorena_limma_" target="_blank">Lorena</a></li>
+      <li><a href="https://www.instagram.com/lqqcas" target="_blank">Lucas</a></li>
+      <li><a href="https://www.instagram.com/maely.sxx_" target="_blank">Maely</a></li>
+      <li><a href="https://www.instagram.com/mahxx.zp" target="_blank">Maria Júlia</a></li>
+      <li><a href="https://www.instagram.com/itsdu_daahh" target="_blank">Maria</a></li>
+      <li><a href="https://www.instagram.com/monica.i_mello" target="_blank">Monica</a></li>
+      <li><a href="https://www.instagram.com/lima_.maryna" target="_blank">Maryna</a></li>
+      <li><a href="https://www.instagram.com/_kauakkz" target="_blank">Kaua</a></li>
+      <li><a href="https://www.instagram.com/amorim_priscilaalves" target="_blank">Priscila</a></li>
+      <li><a href="https://www.instagram.com/_miguel._.vetare_" target="_blank">Miguel</a></li>
+      <li><a href="https://www.instagram.com/ka_k4ir0n" target="_blank">Kairon</a></li>
+    </ul>
+  </section>
 </main>
 
 <footer>
-© 2026 — Turma de Logística
+  © 2026 — Turma 1º Ano de Logística
 </footer>
 
-<script>
-// TEMA SALVO
-if (localStorage.getItem("tema") === "dark") {
-  document.body.classList.add("dark");
-}
-
-function trocarTema() {
-  document.body.classList.toggle("dark");
-  localStorage.setItem(
-    "tema",
-    document.body.classList.contains("dark") ? "dark" : "light"
-  );
-}
-
-// BUSCA DE ALUNOS
-function buscarAluno() {
-  const filtro = document.getElementById("buscar").value.toLowerCase();
-  const alunos = document.querySelectorAll("#lista li");
-  let achou = false;
-
-  alunos.forEach(li => {
-    if (li.textContent.toLowerCase().includes(filtro)) {
-      li.style.display = "block";
-      achou = true;
-    } else {
-      li.style.display = "none";
-    }
-  });
-
-  document.getElementById("nenhum").style.display = achou ? "none" : "block";
-}
-</script>
+<!-- JS APENAS PARA ORDENAR -->
+<script src="js/ordenar.js"></script>
 
 </body>
 </html>
